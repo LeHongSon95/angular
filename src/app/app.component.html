@@ -1,0 +1,97 @@
+<div class="container">
+  <nav class="thanhmenu bg-success"  style=" height: 60px;"> </nav>
+  <nav class="bg-warning">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" routerLink="/">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/duan">Dự án</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/task">Task</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/nhanvien">Nhân viên</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/lienhe">Liên hệ</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dự án
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" routerLink="admin/themDA">Thêm Dự án</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="admin/duan">danh sách dự án</a></li>
+                <li><hr class="dropdown-divider"></li>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Task
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" routerLink="admin/themTask">Thêm task</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="admin/task">danh sách task</a></li>
+                <li><hr class="dropdown-divider"></li>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Nhân viên
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" routerLink="admin/themNV">Thêm nhân viên</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="admin/nhanvien">danh sách nhân viên</a></li>
+                <li><hr class="dropdown-divider"></li>
+
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li> -->
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <main>
+    <article class="col-md-9 bg-light" style="margin-top:30px ;">
+      <router-outlet ></router-outlet>
+      <!-- <app-duan-ds (chonDA) ="ganDA($event)"></app-duan-ds>
+      <app-duan-sua [da]="da"></app-duan-sua> -->
+
+       </article>
+    <aside class="col-md-3 bg-secondary"> </aside>
+  </main>
+  <footer class="bg-dark text0-white " style="height: 45px;"> </footer>
+</div>
+
+
+
+<!--  -->
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tài khoản
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#"routerLink="/dangnhap">đăng nhập</a></li>
+                <li><a class="dropdown-item" href="#">đăng kí</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">quên mật khẩu</a></li>
+              </ul>
+            </li> -->

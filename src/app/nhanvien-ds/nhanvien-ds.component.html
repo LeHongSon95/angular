@@ -1,0 +1,23 @@
+<h4>Quản trị Nhan Vien</h4>
+<table class="table  table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>giới tính</th>
+            <th>khu vực</th>
+            <th>Action</th>   
+        </tr>
+    </thead>
+    <tr *ngFor='let o of listNV'>
+        <td> <a href="#" [routerLink]="['/nhanvien',o.id]">{{o.ho|uppercase}} {{o.ten|uppercase}}</a></td>
+        <td [innerText]="o.ngaysinh|date:'dd/MM/Y'"></td>
+        <td> {{o.phai==true? "Nam":"Nữ"}}</td>
+        <td> {{o.khuvuc}}</td>
+        <td>
+            <a href="#"[routerLink]="['/admin/suaNV',o.id]">Sửa</a> &nbsp;
+            <a href="#" (click)="xoaNV(o.id)">Xóa</a>
+        </td>
+        
+    </tr>
+</table>

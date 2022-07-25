@@ -1,0 +1,34 @@
+<!-- product-them.component.html -->
+<form class="col-8 m-auto border border-primary p-2" #frmT="ngForm" (ngSubmit)="themT(frmT.value)">
+    <p>Tên Task<textarea name="tenTask" [(ngModel)]="t.tenTask" type="text" class="form-control" #loitenTask="ngModel" ngModel required></textarea>
+      <em *ngIf="loitenTask.invalid" class="text-danger">
+        Nhập Tên Task chưa đúng.
+     </em>
+    </p>
+    <p class="mb-3">Du An:<span class="text-danger">*</span>
+      <select name="duAnID" class="form-control" [(ngModel)]="t.duAnID" ngModel>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </p>
+    <p class="mb-3">Tên dự án<span class="text-danger">*</span>
+      <select name="duAnID" class="form-control" [(ngModel)]="t.duAnID" ngModel>
+        <option *ngFor="let n of listDA" value="{{n.id}}">{{n.tenDuAn}}</option>
+      </select>
+    </p>
+    <p class="mb-3">Tên Nhân viên<span class="text-danger">*</span>
+      <select name="nhanvienID" class="form-control" [(ngModel)]="t.nhanvienID" ngModel>
+        <option *ngFor="let n of listNV" value="{{n.id}}">{{n.ten}}</option>
+      </select>
+    </p>
+
+    <p>Mô Tả<textarea name="moTa" [(ngModel)]="t.moTa" type="text" class="form-control"></textarea></p>
+    <p class="mb-3">Status:<span class="text-danger">*</span>
+      <select name="status" class="form-control" [(ngModel)]="t.status" ngModel>
+        <option value="0">Hd</option>
+        <option value="1">td</option>
+      </select>
+    </p>
+    <!-- <p>Mô tả<textarea name="mota" [(ngModel)]="sp.mota" class="form-control"></textarea></p> -->
+    <p><button class="btn btn-warning py-2 px-5" >Thêm</button></p>
+  </form>

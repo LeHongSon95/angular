@@ -1,0 +1,27 @@
+<!-- product-them.component.html -->
+<form class="col-8 m-auto border border-primary p-2" #frmSuaNV="ngForm" (ngSubmit)="nvSua(frmSuaNV.value)">
+  <input name="id" [(ngModel)]="n.id" type="text" hidden>
+    
+  <p>Họ<textarea name="ho" [(ngModel)]="n.ho" type="text" class="form-control" #loiun="ngModel" required minlength="6"></textarea>
+      <em *ngIf="loiun.invalid" class="text-danger"> 
+        Nhập Họ chưa đúng.  
+     </em>
+     <span *ngIf="loiun.errors?.['required']" class="text-danger"> 
+      Vui lòng nhập đầy đủ họ. 
+     </span>
+     <em *ngIf="loiun.errors?.['minlength']['actualLength']<loiun.errors?.['minlength']['requiredLength']" class="text-danger"> 
+         Username chưa đủ dài 
+     </em>
+    </p>
+    <p>Tên <textarea name="ten" [(ngModel)]="n.ten" type="text" class="form-control" #loiun="ngModel" required></textarea>
+      <em *ngIf="loiun.invalid" class="text-danger"> 
+       Vui Lòng Nhập Tên.  
+     </em>
+    </p>
+    <p>Ngày sinh<input name="ngaysinh" [(ngModel)]="n.ngaysinh" type="date" class="form-control"></p>
+    <p>Giới tinh<textarea name="phai" [(ngModel)]="n.phai" type="text" class="form-control"></textarea></p>
+    <p>khu vực <textarea name="khuvuc" [(ngModel)]="n.khuvuc" type="text" class="form-control"></textarea></p>
+    
+    <!-- <p>Mô tả<textarea name="mota" [(ngModel)]="sp.mota" class="form-control"></textarea></p> -->
+    <p><button class="btn btn-warning py-2 px-5" >Cập nhật</button></p>
+  </form>

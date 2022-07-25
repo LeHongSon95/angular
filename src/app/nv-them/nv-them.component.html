@@ -1,0 +1,33 @@
+<!-- product-them.component.html -->
+<form class="col-8 m-auto border border-primary p-2" #frmNV="ngForm" (ngSubmit)="themNV(frmNV.value)">
+    <p>Họ<textarea name="ho" [(ngModel)]="n.ho" type="text" class="form-control" ngModel required
+      #loiHoNV="ngModel"></textarea>
+      <em *ngIf="loiHoNV.invalid" class="text-danger">
+        Vui Lòng nhập họ nhân viên.
+      </em>
+    </p>
+
+    <p>Tên <textarea name="ten" [(ngModel)]="n.ten" type="text" class="form-control" ngModel required
+      #loiTenNV="ngModel"></textarea>
+      <em *ngIf="loiTenNV.invalid" class="text-danger">
+        Vui Lòng nhập tên nhân viên.
+      </em>
+    </p>
+
+    <p>Ngày sinh<input name="ngaysinh" [(ngModel)]="n.ngaysinh" type="date" class="form-control"></p>
+    <p class="mb-3">Gioi Tinh<span class="text-danger">*</span>
+      <select name="phai" class="form-control" [(ngModel)]="n.phai" ngModel>
+        <option value="true">Nam</option>
+        <option value="false">Nữ</option>
+      </select>
+    </p>
+    <p class="mb-3">Khu Vuc<span class="text-danger">*</span>
+      <select name="khuvuc" class="form-control" [(ngModel)]="n.khuvuc" ngModel>
+        <option value="Bắc">Bắc</option>
+        <option value="Trung">Trung</option>
+        <option value="Nam">Nam</option>
+      </select>
+    </p>
+    <!-- <p>Mô tả<textarea name="mota" [(ngModel)]="sp.mota" class="form-control"></textarea></p> -->
+    <p><button class="btn btn-warning py-2 px-5" >Thêm</button></p>
+  </form>

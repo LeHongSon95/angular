@@ -1,0 +1,23 @@
+<!-- product-them.component.html -->
+<form class="col-8 m-auto border border-primary p-2" #frmSuaDA="ngForm" (ngSubmit)="daSua(frmSuaDA.value)" >
+  <input name="id" [(ngModel)]="da.id" type="text" hidden>
+  <p>Tên SP<textarea name="tenDuAn" [(ngModel)]="da.tenDuAn" type="text" class="form-control" ngModel required
+    #loiTenDa="ngModel"></textarea>
+  <em *ngIf="loiTenDa.invalid" class="text-danger">
+    Vui Lòng nhập tên Dự Án.
+  </em></p>
+  <p>Giá<textarea name="tien" [(ngModel)]="da.tien" type="number" class="form-control" ngModel required
+      #loiTien="ngModel"></textarea>
+      <em *ngIf="loiTien.invalid" class="text-danger">
+        Vui Lòng nhập tiền.
+      </em></p>
+
+  <p>Ngày<input name="ngayStart" [(ngModel)]="da.ngayStart" type="date" class="form-control"></p>
+  <!-- <p>Mô tả<textarea name="mota" [(ngModel)]="da.mota" class="form-control"></textarea></p> -->
+  <p class="mb-3">Leader:<span class="text-danger">*</span>
+    <select name="leader" class="form-control" [(ngModel)]="da.leader" ngModel>
+      <option *ngFor="let n of listNV" value="{{n.id}}">{{n.ten}}</option>
+    </select>
+  </p>
+  <p><button class="btn btn-warning py-2 px-5">Cập nhật</button></p>
+</form>
